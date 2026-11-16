@@ -1,0 +1,179 @@
+{
+  "name": "vscode-poly",
+  "displayName": "Poly: Polyglot Monorepo Orchestrator",
+  "description": "Visual polyglot workspace dependency manager, CVE security auditing, doctor diagnostics, and container generator for Node.js, Python, Rust, and Go.",
+  "version": "0.1.0",
+  "publisher": "ritualdev-lab",
+  "author": {
+    "name": "RitualDev Lab",
+    "url": "https://ritualdev.in"
+  },
+  "license": "MIT",
+  "homepage": "https://ritualdev.in/poly",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RitualDev-Lab/vscode-poly.git"
+  },
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages", "Linters", "Other"],
+  "keywords": [
+    "poly",
+    "monorepo",
+    "pnpm",
+    "uv",
+    "cargo",
+    "go",
+    "dependencies",
+    "osv",
+    "docker",
+    "mcp"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "workspaceContains:poly.toml",
+    "workspaceContains:poly.lock",
+    "workspaceContains:package.json",
+    "workspaceContains:pyproject.toml",
+    "workspaceContains:Cargo.toml",
+    "workspaceContains:go.mod"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "poly-explorer",
+          "title": "Poly",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "poly-explorer": [
+        {
+          "id": "poly.workspaceView",
+          "name": "Workspace Members & Dependencies"
+        },
+        {
+          "id": "poly.healthView",
+          "name": "System Health & Toolchains"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "poly.refresh",
+        "title": "Refresh Workspace",
+        "icon": "$(refresh)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.addDependency",
+        "title": "Add Dependency (PURL)",
+        "icon": "$(add)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.install",
+        "title": "Install & Sync Dependencies",
+        "icon": "$(cloud-download)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.audit",
+        "title": "Audit Security Vulnerabilities (OSV)",
+        "icon": "$(shield)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.fix",
+        "title": "Auto-Heal Vulnerabilities (poly fix)",
+        "icon": "$(tools)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.doctor",
+        "title": "Run System Diagnostics (poly doctor)",
+        "icon": "$(pulse)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.docker",
+        "title": "Generate Multi-Stage Docker & DevContainer",
+        "icon": "$(server-process)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.verifyLock",
+        "title": "Verify poly.lock Cryptographic Integrity",
+        "icon": "$(verified)",
+        "category": "Poly"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "poly.refresh",
+          "when": "view == poly.workspaceView || view == poly.healthView",
+          "group": "navigation"
+        },
+        {
+          "command": "poly.addDependency",
+          "when": "view == poly.workspaceView",
+          "group": "navigation"
+        },
+        {
+          "command": "poly.install",
+          "when": "view == poly.workspaceView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Poly Orchestrator",
+      "properties": {
+        "poly.executablePath": {
+          "type": "string",
+          "default": "poly",
+          "description": "Path to the poly CLI binary. Defaults to 'poly' from PATH."
+        },
+        "poly.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show resolved version, license, and CVE status when hovering on dependencies in manifests."
+        },
+        "poly.autoCheckDrift": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically verify poly.lock cryptographic integrity when manifests change."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --target=node20 --sourcemap",
+    "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --target=node20 --sourcemap --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "test": "tsx --test tests/**/*.test.ts",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^20.17.6",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^4.1.1",
+    "esbuild": "^0.25.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "overrides": {
+    "minimatch": "^11.0.8"
+  }
+}
