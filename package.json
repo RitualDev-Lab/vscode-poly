@@ -161,7 +161,7 @@
     "lint": "biome check .",
     "format": "biome format --write .",
     "check": "biome check .",
-    "test": "tsx --test tests/**/*.test.ts",
+    "test": "tsx --test",
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
