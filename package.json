@@ -2,7 +2,7 @@
   "name": "vscode-poly",
   "displayName": "Poly: Polyglot Monorepo Orchestrator",
   "description": "Visual polyglot workspace dependency manager, CVE security auditing, doctor diagnostics, and container generator for Node.js, Python, Rust, and Go.",
-  "version": "0.1.0",
+  "version": "0.6.0",
   "publisher": "ritualdev-lab",
   "author": {
     "name": "RitualDev Lab",
@@ -110,6 +110,24 @@
         "command": "poly.verifyLock",
         "title": "Verify poly.lock Cryptographic Integrity",
         "icon": "$(verified)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.dev",
+        "title": "Run Parallel Dev Matrix (poly dev)",
+        "icon": "$(play)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.outdated",
+        "title": "Check Outdated Dependencies (poly outdated)",
+        "icon": "$(history)",
+        "category": "Poly"
+      },
+      {
+        "command": "poly.agentAdd",
+        "title": "Add Dependency with AI Sandboxing",
+        "icon": "$(shield)",
         "category": "Poly"
       }
     ],

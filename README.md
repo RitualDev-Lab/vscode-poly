@@ -1,9 +1,9 @@
 # Poly for VS Code ⚡
 
 [![CI](https://github.com/RitualDev-Lab/vscode-poly/actions/workflows/ci.yml/badge.svg)](https://github.com/RitualDev-Lab/vscode-poly/actions)
-[![Visual Studio Marketplace Version](https://img.shields.io/badge/VS%20Code-v0.1.0-blue.svg)](https://marketplace.visualstudio.com)
+[![Visual Studio Marketplace Version](https://img.shields.io/badge/VS%20Code-v0.6.0-blue.svg)](https://marketplace.visualstudio.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Powered by Poly](https://img.shields.io/badge/CLI-Poly%20v0.4.0-38bdf8.svg)](https://github.com/RitualDev-Lab/poly)
+[![Powered by Poly](https://img.shields.io/badge/CLI-Poly%20v0.6.0-38bdf8.svg)](https://github.com/RitualDev-Lab/poly)
 
 The official **Visual Studio Code extension** for **[Poly](https://github.com/RitualDev-Lab/poly)** — The Universal Polyglot CLI Package & Dependency Orchestrator for Node.js, Python, Rust, and Go.
 
@@ -32,6 +32,9 @@ The official **Visual Studio Code extension** for **[Poly](https://github.com/Ri
 | `poly.doctor` | **Poly: Run System Diagnostics** | Comprehensive toolchain, compiler, and network audit |
 | `poly.docker` | **Poly: Generate Multi-Stage Dockerfile** | Generate multi-stage Docker & DevContainer files |
 | `poly.verifyLock` | **Poly: Verify poly.lock Cryptographic Integrity** | Verify SHA-256 composite lockfile determinism |
+| `poly.dev` | **Poly: Run Parallel Dev Matrix** | Launch concurrent multi-service process runner |
+| `poly.outdated` | **Poly: Check Outdated Dependencies** | Cross-ecosystem semver upgrade intelligence |
+| `poly.agentAdd` | **Poly: Add Dependency with AI Sandboxing** | Safe dependency installation with script sandboxing |
 | `poly.refresh` | **Poly: Refresh Workspace** | Re-scan workspace members and health report |
 
 ---

@@ -117,4 +117,38 @@ export function registerCommands(
       }
     }),
   );
+
+  // Command: Run Parallel Dev Matrix
+  context.subscriptions.push(
+    vscode.commands.registerCommand("poly.dev", () => {
+      PolyRunner.runInTerminal(["dev"]);
+    }),
+  );
+
+  // Command: Check Outdated Dependencies
+  context.subscriptions.push(
+    vscode.commands.registerCommand("poly.outdated", () => {
+      PolyRunner.runInTerminal(["outdated"]);
+    }),
+  );
+
+  // Command: Add Dependency with AI Sandboxing
+  context.subscriptions.push(
+    vscode.commands.registerCommand("poly.agentAdd", async () => {
+      const input = await vscode.window.showInputBox({
+        title: "Poly: Add Dependency with AI Sandboxing",
+        prompt:
+          "Enter package (e.g. npm:zod, pypi:fastapi, cargo:tokio) - untrusted lifecycle scripts will be sandboxed",
+        placeHolder: "npm:zod@latest",
+        validateInput: (val) => {
+          if (!val || !val.trim()) return "Package input cannot be empty";
+          return null;
+        },
+      });
+
+      if (input) {
+        PolyRunner.runInTerminal(["add", "--sandbox", input.trim()]);
+      }
+    }),
+  );
 }
