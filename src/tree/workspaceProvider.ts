@@ -1,4 +1,3 @@
-import * as path from "node:path";
 import * as vscode from "vscode";
 import { PolyRunner } from "../runner.js";
 import type { DependencyInfo, WorkspaceMemberInfo } from "../types.js";

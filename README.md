@@ -1,9 +1,10 @@
 # Poly for VS Code ⚡
 
 [![CI](https://github.com/RitualDev-Lab/vscode-poly/actions/workflows/ci.yml/badge.svg)](https://github.com/RitualDev-Lab/vscode-poly/actions)
-[![Visual Studio Marketplace Version](https://img.shields.io/badge/VS%20Code-v0.6.0-blue.svg)](https://marketplace.visualstudio.com)
+[![Visual Studio Marketplace Version](https://img.shields.io/badge/VS%20Code-v0.6.2-blue.svg)](https://marketplace.visualstudio.com)
+[![Open VSX Version](https://img.shields.io/badge/Open%20VSX-v0.6.2-purple.svg)](https://open-vsx.org/extension/ritualdev-lab/vscode-poly)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Powered by Poly](https://img.shields.io/badge/CLI-Poly%20v0.6.0-38bdf8.svg)](https://github.com/RitualDev-Lab/poly)
+[![Powered by Poly](https://img.shields.io/badge/CLI-Poly%20v0.6.2-38bdf8.svg)](https://github.com/RitualDev-Lab/poly)
 
 The official **Visual Studio Code extension** for **[Poly](https://github.com/RitualDev-Lab/poly)** — The Universal Polyglot CLI Package & Dependency Orchestrator for Node.js, Python, Rust, and Go.
 
