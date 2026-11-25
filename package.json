@@ -132,6 +132,23 @@
       }
     ],
     "menus": {
+      "editor/context": [
+        {
+          "command": "poly.audit",
+          "when": "editorTextFocus && resourceFilename =~ /^(poly\\.toml|package\\.json|pyproject\\.toml|Cargo\\.toml|go\\.mod)$/",
+          "group": "poly@1"
+        },
+        {
+          "command": "poly.verifyLock",
+          "when": "editorTextFocus",
+          "group": "poly@2"
+        },
+        {
+          "command": "poly.install",
+          "when": "editorTextFocus && resourceFilename =~ /^(poly\\.toml|package\\.json|pyproject\\.toml|Cargo\\.toml|go\\.mod)$/",
+          "group": "poly@3"
+        }
+      ],
       "view/title": [
         {
           "command": "poly.refresh",
@@ -150,6 +167,28 @@
         }
       ]
     },
+    "keybindings": [
+      {
+        "command": "poly.audit",
+        "key": "ctrl+alt+p a",
+        "mac": "cmd+alt+p a"
+      },
+      {
+        "command": "poly.fix",
+        "key": "ctrl+alt+p f",
+        "mac": "cmd+alt+p f"
+      },
+      {
+        "command": "poly.verifyLock",
+        "key": "ctrl+alt+p v",
+        "mac": "cmd+alt+p v"
+      },
+      {
+        "command": "poly.install",
+        "key": "ctrl+alt+p i",
+        "mac": "cmd+alt+p i"
+      }
+    ],
     "configuration": {
       "title": "Poly Orchestrator",
       "properties": {
