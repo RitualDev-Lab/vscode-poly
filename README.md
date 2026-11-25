@@ -8,6 +8,8 @@
 
 The official **Visual Studio Code extension** for **[Poly](https://github.com/RitualDev-Lab/poly)** — The Universal Polyglot CLI Package & Dependency Orchestrator for Node.js, Python, Rust, and Go.
 
+![Poly VS Code Extension Demo](media/demo.gif)
+
 ---
 
 ## Features
@@ -39,6 +41,17 @@ The official **Visual Studio Code extension** for **[Poly](https://github.com/Ri
 | `poly.refresh` | **Poly: Refresh Workspace** | Re-scan workspace members and health report |
 
 ---
+
+## Keyboard Shortcuts & Editor Context Actions
+
+Right-click inside `poly.toml`, `package.json`, `pyproject.toml`, `Cargo.toml`, or `go.mod` to run **Audit Security Vulnerabilities (OSV)**, **Install & Sync Dependencies**, or **Verify `poly.lock` Integrity** directly:
+
+| Action | Windows / Linux | macOS |
+|---|---|---|
+| Audit Security Vulnerabilities (OSV) | `Ctrl+Alt+P A` | `Cmd+Alt+P A` |
+| Auto-Heal Vulnerabilities (`poly fix`) | `Ctrl+Alt+P F` | `Cmd+Alt+P F` |
+| Verify `poly.lock` Integrity | `Ctrl+Alt+P V` | `Cmd+Alt+P V` |
+| Install & Sync Dependencies | `Ctrl+Alt+P I` | `Cmd+Alt+P I` |
 
 ## Extension Settings
 
